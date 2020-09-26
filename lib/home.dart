@@ -27,16 +27,23 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     LatLng pinPosition = LatLng(40.749790, -73.989030);
-    LatLng pinPosition1 = LatLng(40.744830, -73.997520);
     LatLng pinPosition2 = LatLng(40.660960, -73.966570);
 
-    String positionOne = "David";
-    String positionTwo = "Mary";
-    String positionThree = "Chris";
+    String positionOne = "Mikey";
+    String positionTwo = "Anna";
     CameraPosition initialLocation =
         CameraPosition(zoom: 10, bearing: 30, target: pinPosition);
 
     return Scaffold(
+      appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Hexcolor('#FF9671'),
+        automaticallyImplyLeading: false,
+        title: Text(
+          "Welcome",
+          style: TextStyle(fontFamily: 'Poppins', color: Colors.white),
+        ),
+      ),
       backgroundColor: Hexcolor('#FF9671'),
       body: Container(
         decoration: BoxDecoration(
@@ -50,10 +57,10 @@ class _HomeState extends State<Home> {
             child: Column(
               children: [
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding: const EdgeInsets.all(3.0),
                   child: Card(
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.82,
+                      height: MediaQuery.of(context).size.height * 0.76,
                       child: GoogleMap(
                         initialCameraPosition: initialLocation,
                         mapType: _currentMapType,
@@ -63,29 +70,19 @@ class _HomeState extends State<Home> {
                           _controller.complete(controller);
                           setState(() {
                             _markers.add(Marker(
-                                markerId: MarkerId("David"),
+                                markerId: MarkerId("Mikey"),
                                 position: pinPosition,
                                 infoWindow: InfoWindow(
                                   title: positionOne,
-                                  snippet: 'Near you',
+                                  snippet: 'Available',
                                 ),
                                 icon: pinLocationIcon));
-
                             _markers.add(Marker(
-                                markerId: MarkerId("Mary"),
-                                position: pinPosition1,
-                                infoWindow: InfoWindow(
-                                  title: positionTwo,
-                                  snippet: 'Near you',
-                                ),
-                                icon: pinLocationIcon));
-
-                            _markers.add(Marker(
-                                markerId: MarkerId("Chris"),
+                                markerId: MarkerId("Anna"),
                                 position: pinPosition2,
                                 infoWindow: InfoWindow(
-                                  title: positionThree,
-                                  snippet: 'Near you',
+                                  title: positionTwo,
+                                  snippet: 'Last seen: 30 mins ago',
                                 ),
                                 icon: pinLocationIcon));
                           });
