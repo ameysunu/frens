@@ -24,11 +24,18 @@ class _FriendsState extends State<Friends> {
       backgroundColor: Hexcolor('#FF6F91'),
       body: SingleChildScrollView(
         child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("images/home.png"),
+              fit: BoxFit.cover,
+            ),
+          ),
           child: Column(
             children: [
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Card(
+                  color: Hexcolor('#FF9671'),
                   child: Row(
                     children: [
                       Padding(
@@ -68,8 +75,9 @@ class _FriendsState extends State<Friends> {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.all(10.0),
+                padding: const EdgeInsets.only(left: 10.0, right: 10),
                 child: Card(
+                  color: Hexcolor('#D65DB1'),
                   child: Row(
                     children: [
                       Padding(
@@ -78,8 +86,9 @@ class _FriendsState extends State<Friends> {
                           height: 100,
                           width: 100,
                           child: CircleAvatar(
+                            backgroundColor: Hexcolor('#D65DB1'),
                             child: Image.network(
-                                'http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png'),
+                                'https://www.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png'),
                           ),
                         ),
                       ),
@@ -87,11 +96,11 @@ class _FriendsState extends State<Friends> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "David Jonah",
+                            "Mary Beckham",
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
                           Text(
-                            "davidfreek@example.com",
+                            "marybeck@example.com",
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
                         ],
@@ -111,6 +120,7 @@ class _FriendsState extends State<Friends> {
               Padding(
                 padding: const EdgeInsets.all(10.0),
                 child: Card(
+                  color: Hexcolor('#FFC75F'),
                   child: Row(
                     children: [
                       Padding(
@@ -120,7 +130,7 @@ class _FriendsState extends State<Friends> {
                           width: 100,
                           child: CircleAvatar(
                             child: Image.network(
-                                'http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png'),
+                                'https://cms-assets.tutsplus.com/uploads/users/107/posts/26101/image/22-x-men-avatars.jpg'),
                           ),
                         ),
                       ),
@@ -128,11 +138,11 @@ class _FriendsState extends State<Friends> {
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Text(
-                            "David Jonah",
+                            "Chris Martin",
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
                           Text(
-                            "davidfreek@example.com",
+                            "chrismartyy@example.com",
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
                         ],
