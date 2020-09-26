@@ -24,6 +24,9 @@ dependencies:
   flutter:
     sdk: flutter
   hexcolor: ^1.0.4
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.0+1
+  google_sign_in: ^4.5.3
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -68,6 +71,6 @@ flutter:
     - family: Quicksand
       fonts:
         - asset: fonts/Quicksand-SemiBold.ttf
-        
+
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
