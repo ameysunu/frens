@@ -1,4 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -6,10 +10,95 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  MapType _currentMapType = MapType.normal;
+  BitmapDescriptor pinLocationIcon;
+  Set<Marker> _markers = {};
+  Completer<GoogleMapController> _controller = Completer();
+  @override
+  void initState() {
+    super.initState();
+    setCustomMapPin();
+  }
+
+  void setCustomMapPin() async {
+    pinLocationIcon = await BitmapDescriptor.fromAsset('images/marker.bmp');
+  }
+
   @override
   Widget build(BuildContext context) {
+    LatLng pinPosition = LatLng(40.749790, -73.989030);
+    LatLng pinPosition1 = LatLng(40.744830, -73.997520);
+    LatLng pinPosition2 = LatLng(40.660960, -73.966570);
+
+    String positionOne = "David";
+    String positionTwo = "Mary";
+    String positionThree = "Chris";
+    CameraPosition initialLocation =
+        CameraPosition(zoom: 10, bearing: 30, target: pinPosition);
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Hexcolor('#FF9671'),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("images/home.png"),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: SafeArea(
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: Card(
+                    child: Container(
+                      height: MediaQuery.of(context).size.height * 0.82,
+                      child: GoogleMap(
+                        initialCameraPosition: initialLocation,
+                        mapType: _currentMapType,
+                        myLocationEnabled: true,
+                        markers: _markers,
+                        onMapCreated: (GoogleMapController controller) {
+                          _controller.complete(controller);
+                          setState(() {
+                            _markers.add(Marker(
+                                markerId: MarkerId("David"),
+                                position: pinPosition,
+                                infoWindow: InfoWindow(
+                                  title: positionOne,
+                                  snippet: 'Near you',
+                                ),
+                                icon: pinLocationIcon));
+
+                            _markers.add(Marker(
+                                markerId: MarkerId("Mary"),
+                                position: pinPosition1,
+                                infoWindow: InfoWindow(
+                                  title: positionTwo,
+                                  snippet: 'Near you',
+                                ),
+                                icon: pinLocationIcon));
+
+                            _markers.add(Marker(
+                                markerId: MarkerId("Chris"),
+                                position: pinPosition2,
+                                infoWindow: InfoWindow(
+                                  title: positionThree,
+                                  snippet: 'Near you',
+                                ),
+                                icon: pinLocationIcon));
+                          });
+                        },
+                      ),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
     );
   }
 }

@@ -116,6 +116,7 @@ class _FriendsState extends State<Friends> {
                           height: 100,
                           width: 100,
                           child: CircleAvatar(
+                            backgroundColor: Hexcolor('#FF9671'),
                             child: Image.network(
                                 'http://www.hotavatars.com/wp-content/uploads/2019/01/I80W1Q0.png'),
                           ),
