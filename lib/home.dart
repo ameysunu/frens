@@ -60,7 +60,7 @@ class _HomeState extends State<Home> {
                   padding: const EdgeInsets.all(3.0),
                   child: Card(
                     child: Container(
-                      height: MediaQuery.of(context).size.height * 0.76,
+                      height: MediaQuery.of(context).size.height * 0.78,
                       child: GoogleMap(
                         initialCameraPosition: initialLocation,
                         mapType: _currentMapType,
@@ -95,6 +95,20 @@ class _HomeState extends State<Home> {
             ),
           ),
         ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Hexcolor('#FFFFFF'),
+        child: Icon(
+          Icons.map,
+          color: Hexcolor('#845EC2'),
+        ),
+        onPressed: () {
+          setState(() {
+            _currentMapType = _currentMapType == MapType.normal
+                ? MapType.satellite
+                : MapType.normal;
+          });
+        },
       ),
     );
   }
