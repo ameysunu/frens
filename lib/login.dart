@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:frens/home.dart';
+import 'package:frens/homewidget.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -79,7 +79,8 @@ class _LoginState extends State<Login> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(10.0),
+                  padding:
+                      const EdgeInsets.only(left: 10.0, top: 40, bottom: 10),
                   child: Text(
                     'Swipe your ID to enter',
                     style: TextStyle(
@@ -125,7 +126,7 @@ class _LoginState extends State<Login> {
                           Navigator.of(context).push(
                             MaterialPageRoute(
                               builder: (context) {
-                                return Home();
+                                return HomeWidget();
                               },
                             ),
                           );
