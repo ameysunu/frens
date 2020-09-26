@@ -215,7 +215,7 @@ class _FriendsState extends State<Friends> {
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
                           Text(
-                            "chrismartyy@example.com",
+                            "chrismarty@example.com",
                             style: TextStyle(fontFamily: 'Poppins'),
                           ),
                         ],

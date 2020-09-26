@@ -69,9 +69,6 @@ flutter:
       fonts:
         - asset: fonts/Poppins-SemiBold.ttf
 
-    - family: Quicksand
-      fonts:
-        - asset: fonts/Quicksand-SemiBold.ttf
 
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
