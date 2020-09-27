@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:frens/agora/main.dart';
 import 'package:frens/chatone.dart';
+import 'package:frens/chattwo.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -389,7 +390,14 @@ void _popupDialogMikey(BuildContext context) {
                                                 ),
                                               ],
                                             ),
-                                            onPressed: null),
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ChatTwo()),
+                                              );
+                                            }),
                                       ],
                                     ),
                                   ),
