@@ -1,7 +1,5 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:frens/anna.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -76,7 +74,9 @@ class _HomeState extends State<Home> {
                                 infoWindow: InfoWindow(
                                   title: positionOne,
                                   snippet: 'Available',
-                                  onTap: () {},
+                                  onTap: () {
+                                    _popupDialogMikey(context);
+                                  },
                                 ),
                                 icon: pinLocationIcon));
                             _markers.add(Marker(
@@ -245,6 +245,141 @@ void _popupDialog(BuildContext context) {
                     child: CircleAvatar(
                         child: Image.network(
                             "https://www.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png")),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      });
+}
+
+void _popupDialogMikey(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.33,
+              width: MediaQuery.of(context).size.width * 1,
+              child: Stack(
+                alignment: Alignment.topCenter,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top: 30),
+                    width: double.infinity,
+                    child: Card(
+                        color: Hexcolor('#2C73D2'),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 40, bottom: 0, left: 10, right: 10),
+                              child: Column(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      "Michael Scott(Mikey)",
+                                      style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          color: Colors.white,
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      "Available",
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                        fontFamily: 'Poppins',
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10.0, bottom: 10),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        RaisedButton(
+                                            color: Hexcolor('#845EC2'),
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                side: BorderSide(
+                                                    color:
+                                                        Hexcolor('#845EC2'))),
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10.0),
+                                                  child: Icon(
+                                                    Icons.video_call,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  "Call",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontFamily: 'Poppins'),
+                                                ),
+                                              ],
+                                            ),
+                                            onPressed: null),
+                                        RaisedButton(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                side: BorderSide(
+                                                    color:
+                                                        Hexcolor('#845EC2'))),
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10.0),
+                                                  child: Icon(
+                                                    Icons.chat,
+                                                    color: Colors.white,
+                                                  ),
+                                                ),
+                                                Text(
+                                                  "Chat",
+                                                  style: TextStyle(
+                                                      color: Colors.white,
+                                                      fontFamily: 'Poppins'),
+                                                ),
+                                              ],
+                                            ),
+                                            onPressed: null),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: CircleAvatar(
+                        child: Image.network(
+                            "https://www.iconfinder.com/data/icons/avatars-6/500/Avatar_boy_man_people_account_client_male_person_user_work_sport_beard_team_glasses-512.png")),
                   ),
                 ],
               ),
