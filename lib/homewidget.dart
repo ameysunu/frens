@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:frens/friends.dart';
+import 'package:frens/user.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'home.dart';
@@ -16,6 +17,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   final List<Widget> _widgetOptions = [
     Home(),
     Friends(),
+    User(),
   ];
 
   Widget build(BuildContext context) {
