@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:frens/agora/main.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -288,7 +289,7 @@ void _popupDialogMikey(BuildContext context) {
                                       style: TextStyle(
                                           fontFamily: 'Poppins',
                                           color: Colors.white,
-                                          fontSize: 30,
+                                          fontSize: 25,
                                           fontWeight: FontWeight.bold),
                                     ),
                                   ),
@@ -337,7 +338,14 @@ void _popupDialogMikey(BuildContext context) {
                                                 ),
                                               ],
                                             ),
-                                            onPressed: null),
+                                            onPressed: () {
+                                              Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        MyApp()),
+                                              );
+                                            }),
                                         RaisedButton(
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
