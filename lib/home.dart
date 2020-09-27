@@ -6,6 +6,8 @@ import 'package:frens/chattwo.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import 'login.dart';
+
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -41,6 +43,20 @@ class _HomeState extends State<Home> {
         elevation: 0,
         backgroundColor: Hexcolor('#FF9671'),
         automaticallyImplyLeading: false,
+        actions: <Widget>[
+          IconButton(
+              icon: Icon(
+                Icons.logout,
+                color: Colors.white,
+              ),
+              onPressed: () {
+                signOutGoogle();
+                Navigator.of(context).pushAndRemoveUntil(
+                    MaterialPageRoute(builder: (context) {
+                  return Login();
+                }), ModalRoute.withName('/'));
+              }),
+        ],
         title: Text(
           "Welcome",
           style: TextStyle(fontFamily: 'Poppins', color: Colors.white),

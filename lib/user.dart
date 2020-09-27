@@ -51,7 +51,7 @@ class _UserState extends State<User> {
                               style: TextStyle(
                                   color: Colors.black,
                                   fontFamily: 'Poppins',
-                                  fontSize: 14),
+                                  fontSize: 12),
                             ),
                           ),
                         ],
@@ -75,7 +75,7 @@ class _UserState extends State<User> {
                   child: Row(
                     children: [
                       Container(
-                        height: 200,
+                        height: 210,
                         width: 200,
                         child: Card(
                           child: Column(
@@ -97,7 +97,7 @@ class _UserState extends State<User> {
                         ),
                       ),
                       Container(
-                        height: 200,
+                        height: 210,
                         width: 200,
                         child: Card(
                           child: Column(
