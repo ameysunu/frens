@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:frens/anna.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -75,6 +76,7 @@ class _HomeState extends State<Home> {
                                 infoWindow: InfoWindow(
                                   title: positionOne,
                                   snippet: 'Available',
+                                  onTap: () {},
                                 ),
                                 icon: pinLocationIcon));
                             _markers.add(Marker(
@@ -82,6 +84,9 @@ class _HomeState extends State<Home> {
                                 position: pinPosition2,
                                 infoWindow: InfoWindow(
                                   title: positionTwo,
+                                  onTap: () {
+                                    _popupDialog(context);
+                                  },
                                   snippet: 'Last seen: 30 mins ago',
                                 ),
                                 icon: pinLocationIcon));
@@ -112,4 +117,126 @@ class _HomeState extends State<Home> {
       ),
     );
   }
+}
+
+void _popupDialog(BuildContext context) {
+  showDialog(
+      context: context,
+      builder: (context) {
+        return Align(
+          alignment: Alignment.bottomCenter,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Container(
+              height: MediaQuery.of(context).size.height * 0.33,
+              width: MediaQuery.of(context).size.width * 1,
+              child: Stack(
+                alignment: Alignment.topCenter,
+                children: <Widget>[
+                  Container(
+                    margin: EdgeInsets.only(top: 30),
+                    width: double.infinity,
+                    child: Card(
+                        color: Color(0xffeeeeee),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Padding(
+                              padding: EdgeInsets.only(
+                                  top: 40, bottom: 0, left: 10, right: 10),
+                              child: Column(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      "Anna Baker",
+                                      style: TextStyle(
+                                          fontFamily: 'Poppins',
+                                          fontSize: 30,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.all(10.0),
+                                    child: Text(
+                                      "Last seen: 30 mins ago",
+                                      style: TextStyle(
+                                        fontFamily: 'Poppins',
+                                        fontSize: 15,
+                                      ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                        top: 10.0, bottom: 10),
+                                    child: Row(
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.spaceEvenly,
+                                      children: [
+                                        RaisedButton(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                side: BorderSide(
+                                                    color: Colors.red)),
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10.0),
+                                                  child: Icon(Icons.video_call),
+                                                ),
+                                                Text(
+                                                  "Call",
+                                                  style: TextStyle(
+                                                      fontFamily: 'Poppins'),
+                                                ),
+                                              ],
+                                            ),
+                                            onPressed: null),
+                                        RaisedButton(
+                                            shape: RoundedRectangleBorder(
+                                                borderRadius:
+                                                    BorderRadius.circular(10.0),
+                                                side: BorderSide(
+                                                    color: Colors.red)),
+                                            child: Row(
+                                              children: [
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          right: 10.0),
+                                                  child: Icon(Icons.chat),
+                                                ),
+                                                Text(
+                                                  "Chat",
+                                                  style: TextStyle(
+                                                      fontFamily: 'Poppins'),
+                                                ),
+                                              ],
+                                            ),
+                                            onPressed: null),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                          ],
+                        )),
+                  ),
+                  Container(
+                    height: 80,
+                    width: 80,
+                    child: CircleAvatar(
+                        child: Image.network(
+                            "https://www.iconfinder.com/data/icons/avatars-xmas-giveaway/128/girl_avatar_child_kid-512.png")),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        );
+      });
 }
