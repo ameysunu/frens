@@ -213,6 +213,7 @@ void _popupDialog(BuildContext context) {
                                               );
                                             }),
                                         RaisedButton(
+                                            color: Hexcolor('#845EC2'),
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
@@ -362,6 +363,7 @@ void _popupDialogMikey(BuildContext context) {
                                               );
                                             }),
                                         RaisedButton(
+                                            color: Hexcolor('#845EC2'),
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
