@@ -304,11 +304,11 @@ class _CallPageState extends State<CallPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        iconTheme: IconThemeData(color: Colors.black),
-        backgroundColor: Hexcolor('#FFDFCA'),
+        iconTheme: IconThemeData(color: Colors.white),
+        backgroundColor: Hexcolor('#FF6F91'),
         title: Text(
           'Meeting',
-          style: TextStyle(color: Colors.black, fontFamily: 'Gotham'),
+          style: TextStyle(color: Colors.white, fontFamily: 'Poppins'),
         ),
       ),
       backgroundColor: Colors.black,

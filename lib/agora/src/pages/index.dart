@@ -32,18 +32,19 @@ class IndexState extends State<IndexPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
-      backgroundColor: Hexcolor('#FFE8F7'),
+      backgroundColor: Hexcolor('#FF6F91'),
       appBar: AppBar(
+        elevation: 0,
         flexibleSpace: Image(
-          image: AssetImage('images/home.png'),
+          image: AssetImage('images/main.png'),
           fit: BoxFit.cover,
         ),
-        backgroundColor: Hexcolor('#FFE8F7'),
+        backgroundColor: Hexcolor('#FF6F91'),
         title: Text(
-          'Call Team',
+          'Call',
           style: TextStyle(
             color: Hexcolor('#5C6178'),
-            fontFamily: 'Gotham',
+            fontFamily: 'Poppins',
           ),
         ),
       ),
@@ -65,20 +66,20 @@ class IndexState extends State<IndexPage> {
                     Expanded(
                         child: TextField(
                       style: TextStyle(
-                          color: Hexcolor('#5C6178'), fontFamily: 'Gotham'),
+                          color: Hexcolor('#5C6178'), fontFamily: 'Poppins'),
                       controller: _channelController,
                       decoration: InputDecoration(
                         labelStyle: TextStyle(
-                            color: Hexcolor('#5C6178'), fontFamily: 'Gotham'),
+                            color: Hexcolor('#5C6178'), fontFamily: 'Poppins'),
                         hintStyle: TextStyle(
-                            color: Hexcolor('#5C6178'), fontFamily: 'Gotham'),
+                            color: Hexcolor('#5C6178'), fontFamily: 'Poppins'),
                         errorStyle:
-                            TextStyle(color: Colors.red, fontFamily: 'Gotham'),
+                            TextStyle(color: Colors.red, fontFamily: 'Poppins'),
                         errorText: _validateError ? 'ID is mandatory' : null,
                         border: UnderlineInputBorder(
                           borderSide: BorderSide(width: 1),
                         ),
-                        hintText: 'Enter Team ID',
+                        hintText: 'Enter username',
                       ),
                     ))
                   ],
@@ -90,7 +91,7 @@ class IndexState extends State<IndexPage> {
                       title: Text(
                         "Start a call",
                         style: TextStyle(
-                            fontFamily: 'Gotham', color: Hexcolor('#5C6178')),
+                            fontFamily: 'Poppins', color: Hexcolor('#5C6178')),
                       ),
                       leading: Radio(
                         value: ClientRole.Broadcaster,
@@ -107,7 +108,7 @@ class IndexState extends State<IndexPage> {
                       title: Text(
                         "Join a meeting",
                         style: TextStyle(
-                            fontFamily: 'Gotham', color: Hexcolor('#5C6178')),
+                            fontFamily: 'Poppins', color: Hexcolor('#5C6178')),
                       ),
                       leading: Radio(
                         value: ClientRole.Audience,
@@ -147,7 +148,7 @@ class IndexState extends State<IndexPage> {
                         color: Hexcolor('#5C6178'),
                         fontSize: 14,
                         fontStyle: FontStyle.italic,
-                        fontFamily: 'Gotham'),
+                        fontFamily: 'Poppins'),
                   ),
                 ),
               ],
