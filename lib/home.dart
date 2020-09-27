@@ -137,7 +137,7 @@ void _popupDialog(BuildContext context) {
                     margin: EdgeInsets.only(top: 30),
                     width: double.infinity,
                     child: Card(
-                        color: Color(0xffeeeeee),
+                        color: Hexcolor('#2C73D2'),
                         child: Column(
                           mainAxisSize: MainAxisSize.min,
                           children: <Widget>[
@@ -152,6 +152,7 @@ void _popupDialog(BuildContext context) {
                                       "Anna Baker",
                                       style: TextStyle(
                                           fontFamily: 'Poppins',
+                                          color: Colors.white,
                                           fontSize: 30,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -161,6 +162,7 @@ void _popupDialog(BuildContext context) {
                                     child: Text(
                                       "Last seen: 30 mins ago",
                                       style: TextStyle(
+                                        color: Colors.white,
                                         fontFamily: 'Poppins',
                                         fontSize: 15,
                                       ),
@@ -174,22 +176,28 @@ void _popupDialog(BuildContext context) {
                                           MainAxisAlignment.spaceEvenly,
                                       children: [
                                         RaisedButton(
+                                            color: Hexcolor('#845EC2'),
                                             shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                                 side: BorderSide(
-                                                    color: Colors.red)),
+                                                    color:
+                                                        Hexcolor('#845EC2'))),
                                             child: Row(
                                               children: [
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.only(
                                                           right: 10.0),
-                                                  child: Icon(Icons.video_call),
+                                                  child: Icon(
+                                                    Icons.video_call,
+                                                    color: Colors.white,
+                                                  ),
                                                 ),
                                                 Text(
                                                   "Call",
                                                   style: TextStyle(
+                                                      color: Colors.white,
                                                       fontFamily: 'Poppins'),
                                                 ),
                                               ],
@@ -200,18 +208,23 @@ void _popupDialog(BuildContext context) {
                                                 borderRadius:
                                                     BorderRadius.circular(10.0),
                                                 side: BorderSide(
-                                                    color: Colors.red)),
+                                                    color:
+                                                        Hexcolor('#845EC2'))),
                                             child: Row(
                                               children: [
                                                 Padding(
                                                   padding:
                                                       const EdgeInsets.only(
                                                           right: 10.0),
-                                                  child: Icon(Icons.chat),
+                                                  child: Icon(
+                                                    Icons.chat,
+                                                    color: Colors.white,
+                                                  ),
                                                 ),
                                                 Text(
                                                   "Chat",
                                                   style: TextStyle(
+                                                      color: Colors.white,
                                                       fontFamily: 'Poppins'),
                                                 ),
                                               ],
