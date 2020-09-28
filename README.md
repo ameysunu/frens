@@ -1,6 +1,6 @@
 # frens
 
-A new Flutter project.
+An app for introverts to meet and make new friends in town.
 
 ## Getting Started
 
